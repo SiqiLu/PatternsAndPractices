@@ -41,4 +41,4 @@
 
 ## More resources
 
-- [index of the contribution guidelines](./contribution-guidelines/contribution-guidelines-index.md)
+- [Index of the contribution guidelines](./contribution-guidelines/contribution-guidelines-index.md)
