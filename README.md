@@ -1,9 +1,9 @@
 # PatternsAndPractices
-设计和构建应用的通用模式和最佳实践。
+构建应用的通用模式和最佳实践。
 
 ## Repository organization
 
-项目包含4个根目录：
+项目包含3个根目录：
 
 ### \articles
 
@@ -11,9 +11,9 @@
 
 * **Article filenames:** 文档名称均尽量使用英文命名，文档名称中不能使用空格、换行符。
 
-* **Media subfolders:** *\articles* 目录中包含了一个名为 *\media* 的子目录。该子目录中存放所有 *\articles* 根目录中的文档所引用的媒体文件（图片、PDF文档、音频、视频等）。*\articles* 中会把主题相关联的文档存放在主题子目录中，每一个主题目录都分别包含一个独立的 *\media* 目录用于存放该主题内的文档所引用的媒体文件。 每个文档的媒体文件目录和该文档同名，即文档名去除.md后缀即为媒体文件目录名。
+* **Media subfolders:** *\articles* 目录中包含了一个名为 *\media* 的子目录。该子目录中存放所有 *\articles* 根目录中的文档所引用的媒体文件（图片、PDF文档、音频、视频等）。*\articles* 中会把主题相关联的文档存放在主题子目录中，每一个主题目录都分别包含一个独立的 *\media* 目录，用于存放该主题内的文档所引用的媒体文件。 每个文档的媒体文件目录和该文档同名，即文档名去除.md后缀即为媒体文件目录名。
 
-### \markdown templates
+### \markdown-templates
 
 目录中存放文档的markdown模板。
 
@@ -25,9 +25,11 @@
 
 文档编写使用 GitHub flavored markdown. 以下是可以使用的一些资源和工具.
 
-- [Markdown basics](https://help.github.com/articles/markdown-basics/)
+- [Markdown basics](https://help.github.com/articles/getting-started-with-writing-and-formatting-on-github/)
 
 - [Printable markdown cheatsheet](./contribution-guidelines/media/documents/markdown-cheatsheet.pdf?raw=true)
+
+- [Emoji cheatsheet](http://www.emoji-cheat-sheet.com/)
 
 - [Markdown editor: Visual Studio Code](https://www.visualstudio.com/products/code-vs)
 
@@ -39,4 +41,4 @@
 
 ## More resources
 
-参考 [index of the contribution guidelines](./contribution-guidelines/contribution-guidelines-index.md)。
+- [index of the contribution guidelines](./contribution-guidelines/contribution-guidelines-index.md)
