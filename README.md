@@ -25,20 +25,29 @@
 
 文档编写使用 GitHub flavored markdown. 以下是可以使用的一些资源和工具.
 
-- [Markdown basics](https://help.github.com/articles/getting-started-with-writing-and-formatting-on-github/)
+- [Markdown basics][1]
 
-- [Printable markdown cheatsheet](./contribution-guidelines/media/documents/markdown-cheatsheet.pdf?raw=true)
+- [Printable markdown cheatsheet][2]
 
-- [Emoji cheatsheet](http://www.emoji-cheat-sheet.com/)
+- [Emoji cheatsheet][3]
 
-- [Markdown editor: Visual Studio Code](https://www.visualstudio.com/products/code-vs)
+- [Markdown editor: Visual Studio Code][4]
 
-- [Markdown editor: Atom](https://atom.io/)
+- [Markdown editor: Atom][5]
 
-- [Markdown editor: Visual Studio Code](https://www.visualstudio.com/products/code-vs)
+- [Markdown editor: Visual Studio Code][6]
 
-- [Markdown editor online: Stack Edit](https://stackedit.io/)
+- [Markdown editor online: Stack Edit][7]
 
 ## More resources
 
 - [Index of the contribution guidelines](./contribution-guidelines/contribution-guidelines-index.md)
+
+<!--links-->
+[1]: https://help.github.com/articles/getting-started-with-writing-and-formatting-on-github/
+[2]: ./contribution-guidelines/media/documents/markdown-cheatsheet.pdf?raw=true
+[3]: http://www.emoji-cheat-sheet.com/
+[4]: https://www.visualstudio.com/products/code-vs
+[5]: https://atom.io/
+[6]: https://www.visualstudio.com/products/code-vs
+[7]: https://stackedit.io/ 
