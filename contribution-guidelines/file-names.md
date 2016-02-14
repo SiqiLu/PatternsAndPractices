@@ -18,7 +18,6 @@
 - 使用英文小写字母。
 - 名称不要超过80个字母。
 - 动词使用一般现在时态，如 develop, buy, build, troubleshoot。不要额外使用ing后缀。
-- 避免使用短小的单词 - 不要使用 a, and, the, in, or 等。
 - 所有的文件必须使用markdown格式，并且使用 .md 作为文件后缀名。
 
 ##Pattern
