@@ -4,12 +4,9 @@
 
 以下是文档命名时需要关注的内容:
 
-+ [Rules]
-+ [Pattern]
-+ [Standard examples]
-+ [Special file naming convention for the Azure preview portal]
-+ [Marketplace content]
-+ [File name approval]
+- [Rules]
+- [Pattern]
+- [Standard examples]
 
 ##Rules
 
@@ -39,10 +36,6 @@
 - mobile-services-dotnet-backend-get-started-settings-sync.md
 - active-directory-java-authenticate-users-access-control-eclipse.md
 - virtual-machines-install-windows-server-2008r2.md
-
-##File name approval
-
-It's the job of our group of pull request reviewers to review file names when a new file is submitted to the repository for the first time. Pull request reviewers should review the file name and provide feedback via the pull request comment stream if changes are needed. The file name needs to be corrected before the pull request is accepted. Contributors can easily push the update to the pending pull request.
 
 ##More resources
 
