@@ -1,4 +1,5 @@
 # Create images in markdown
+
 在markdown文件中使用图片。
 
 ## 图片目录与链接语法
