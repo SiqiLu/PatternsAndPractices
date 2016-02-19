@@ -166,7 +166,7 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
 
 > 注意区分概念。
 
-在工作中，如果需要开发新功能或者有新的代码提交，不能直接在私有代码库的公共分支上进行开发或者变更提交，即不能在本地的master、dev或者其他公共分支上提交。而是应该由开发人员创建一个新的功能分支进行开发。新分支的创建往往对应着开发人员开始解决某一任务项，功能分支应该具有描述性的名字并且分支名中只能包含 ASCII 字符， 功能分支的命名应该包含2部分，并且按照 ```<feature branch type>/<feature branch name>``` 的格式命名。比较推荐的分支名可以是 feature/animated-menu-items 或者 bugfix/issue-#1061，可以透过分支名清晰地获知分支的目的、对应的工作和相关的资源。
+在工作中，如果需要开发新功能或者有新的代码提交，不能直接在私有代码库的公共分支上进行开发或者变更提交，即不能在本地的master、dev或者其他公共分支上提交。而是应该由开发人员创建一个新的功能分支进行开发。新分支的创建往往对应着开发人员开始解决某一任务项，功能分支应该具有描述性的名字并且分支名中只能包含 ASCII 字符， 功能分支的命名应该包含2部分，并且按照 ```<feature branch type>/<project name>/<feature branch name>``` 的格式命名（如果项目不是多项目共享 repository 的模式，则不需要在分支名称中包含 project name）。比较推荐的分支名可以是 feature/GieDemo/animated-menu-items 或者 bugfix/issue-#1061，可以透过分支名清晰地获知分支的目的、对应的工作和相关的资源。
 
 >**Note:**
 
@@ -200,22 +200,22 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
 
     ![Mary 创建新分支][m7] 
 
-    在Mary开发新功能的代码之前，她首先需要创建一个新的独立分支，她应该使用如下命令创建分支，其中功能分支名为feature/GDM-issue-001-hello-world，表明该分支是针对GDM项目的001任务的功能开发：
+    在Mary开发新功能的代码之前，她首先需要创建一个新的独立分支，她应该使用如下命令创建分支，其中功能分支名为feature/GitDemo/GDM-issue-001-hello-world，表明该分支是针对GitDemo项目的GDM-issue-001任务的功能开发：
 
     ```bash
-        git checkout -b feature/GDM-issue-001-hello-world dev
+        git checkout -b feature/GitDemo/GDM-issue-001-hello-world dev
     ```
 
     或者（其中 GitDemo 是项目的公共开发分支）：
 
     ```bash
-        git checkout -b feature/GDM-issue-001-hello-world GitDemo
+        git checkout -b feature/GitDemo/GDM-issue-001-hello-world GitDemo
     ```
 
     实际操作情况应该和下图类似：
     ![创建功能分支的图示][m8]
 
-    通过以上命令可以将当前 git 工作区切换到 feature/GDM-issue-001-hello-world 分支上，而 -b 操作符表示当需要的分支不存在时则基于 GitDemo 分支创建新分支。在这个分支上可以添加新代码、修改缺陷、暂存变更、提交变更，在这个独立的分支上可以提交任意多的提交，但是需要注意所有的代码变动和提交必需是聚焦在该分支对应的新功能上，不能随意修改继承来的老代码，否则会因为对原有的代码库冲击过大，而合并的时候非常困难。
+    通过以上命令可以将当前 git 工作区切换到 feature/GitDemo/GDM-issue-001-hello-world 分支上，而 -b 操作符表示当需要的分支不存在时则基于 GitDemo 分支创建新分支。在这个分支上可以添加新代码、修改缺陷、暂存变更、提交变更，在这个独立的分支上可以提交任意多的提交，但是需要注意所有的代码变动和提交必需是聚焦在该分支对应的新功能上，不能随意修改继承来的老代码，否则会因为对原有的代码库冲击过大，而合并的时候非常困难。
 
     ```bash
         git status
@@ -235,7 +235,7 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
     Mary 由于开会或者吃午饭需要暂时离开工作，在她离开之前，最好将手头正在开发的功能分支代码推送到中央代码库中，防止该代码分支丢失。如果Mary是和其他同事一起开发此功能，她就需要经常将该分支推送到中央代码库以和其他同事协作。
 
     ```bash
-        git push -u origin feature/GDM-issue-001-hello-world
+        git push -u origin feature/GitDemo/GDM-issue-001-hello-world
     ```
     
     实际操作情况应该和下图类似：
@@ -314,7 +314,7 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
      
      ```bash
         git checkout GitDemo
-        git merge feature/GDM-issue-001-hello-world 
+        git merge feature/GitDemo/GDM-issue-001-hello-world 
         git push origin GitDemo
      ```
     实际操作情况应该和下图类似：
@@ -329,11 +329,11 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
 
 - 父分支: 公共开发分支，develop
 - 目标分支: 公共开发分支，develop
-- 命名规则: ```feature/<branch name>```
+- 命名规则: ```feature/<branch name>``` 或者 ```feature/<project name>/<branch name>```
 
 ![git-feature-branches][m23]
 
-每一个新功能的开发，都应该创建一个独立的分支，分支名称应该符合规则 ```feature/<branch name>``` 并且推送到中央代码库进行备份以及团队协作。用于功能开发的分支应该使用公共开发分支作为它的父分支，即分支创建的时候，应该以dev或者团队指定的公共开发分支作为代码基线。当一个用于功能开发的功能分支经过评审后应该合并进公共开发分支。
+每一个新功能的开发，都应该创建一个独立的分支，分支名称应该符合规则 ```feature/<branch name>``` 或者 ```feature/<project name>/<branch name>``` 并且推送到中央代码库进行备份以及团队协作。用于功能开发的分支应该使用公共开发分支作为它的父分支，即分支创建的时候，应该以dev或者团队指定的公共开发分支作为代码基线。当一个用于功能开发的功能分支经过评审后应该合并进公共开发分支。
 
 >**Note:**
 
@@ -343,7 +343,7 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
 
 - 父分支: 公共开发分支，develop
 - 目标分支: 公共开发分支，develop
-- 命名规则: ```bugfix/<branch name>```
+- 命名规则: ```bugfix/<branch name>``` 或者 ```bugfix/<project name>/<branch name>```
 
 每一个缺陷的修复也同样应该在独立的功能分支中进行，除创建的分支名称规则不同，应该为 ```bugfix/<branch name>```之外 ，其余和用于功能开发的分支使用方法一致。
 
@@ -353,13 +353,13 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
 
 - 父分支: 公共开发分支，develop
 - 目标分支: 公共发布分支，master 和 公共开发分支，develop
-- 命名规则: ```release/<branch name>```
+- 命名规则: ```release/<branch name>``` 或者 ```release/<project name>/<branch name>```
 
 ![git-release-branches][m24]
 
 一旦开发完成足够的功能，并且代码均经过评审和开发阶段自测，则可以准备进行版本发布。在进行发布准备之前，一般已经将现有的 ```Feature branches``` 和 ```Bugfix branches``` 进行了合并。在这个分支中，团队主要完成release notes的编写、部署文档的编写、编译脚本的编写、还要为该版本创建一个合适的版本号。完成这些工作之后，可以将该分支推送到中央代码库中，并且使用持续集成工具（编译服务器）进行发布包的创建。
 
-使用三级版本号，即 x.y.z 版本号，每次进行发布，新开 ```Release branch``` 则递增第二级版本号，即 1.3.9 到 1.4.1。而在一次发布准备中往往需要进行多次编译尝试和打包，可以每次编译和打包递增第三级版本号，即 1.4.5 到 1.4.6。只有成功完成生产发布，才递增第一级版本号，即 1.4.6 到 2.0.1。
+使用三级版本号，即 x.y.z 版本号，每次进行发布，新开 ```Release branch``` 则递增第二级版本号，即 1.3.9 到 1.4.1。而在一次发布准备中往往需要进行多次编译尝试和打包，可以每次编译和打包递增第三级版本号，即 1.4.5 到 1.4.6。只有经过较大业务变更，才递增第一级版本号，即 1.4.6 到 2.0.1。
 
 成功打包发布到测试环境后，需要将发布准备分支合并到公共发布分支和公共开发分支。在准备发布的过程中，将停止对其他功能分支的 ```pull request``` 处理，防止发布后的代码合并进公共分支会出现冲突的情况。
 
@@ -373,8 +373,8 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
         git checkout GitDemo
         git pull origin GitDemo
         git merge GitDemo-Release
-        git checkout -b release/GDM-issue-010-version-1.4 GitDemo
-        git push -u origin release/GDM-issue-010-version-1.4
+        git checkout -b release/GitDemo/GDM-issue-010-version-1.4 GitDemo
+        git push -u origin release/GitDemo/GDM-issue-010-version-1.4
     ```
 
 2.  进行发布准备工作；
@@ -382,16 +382,16 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
     ```bash
         git add <some-file>
         git commit -m "commit message"
-        git push -u origin release/GDM-issue-010-version-1.4
+        git push -u origin release/GitDemo/GDM-issue-010-version-1.4
     ```  
 
 3.  使用 [```git tag```][19] 为代码库添加版本；
 
     ```bash
-        git checkout release/GDM-issue-010-version-1.4
+        git checkout release/GitDemo/GDM-issue-010-version-1.4
         git pull origin GitDemo
-        git tag -a <project name>@<version>
-        git push origin <project name>@<version> release/GDM-issue-010-version-1.4
+        git tag <project name>@<version> -m "Version <project name>@<version>"
+        git push origin <project name>@<version> release/GitDemo/GDM-issue-010-version-1.4
     ```
 4.  将分支推送到编译服务器上的 git 仓库，尝试编译并且打出版本包；
 
@@ -402,11 +402,11 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
     ```bash
         git checkout GitDemo-Release
         git pull origin GitDemo-Release
-        git merge release/GDM-issue-010-version-1.4
+        git merge release/GitDemo/GDM-issue-010-version-1.4
         git push origin GitDemo-Release
         git checkout GitDemo
         git pull origin GitDemo
-        git merge release/GDM-issue-010-version-1.4
+        git merge release/GitDemo/GDM-issue-010-version-1.4
         git push origin GitDemo
     ```
     
@@ -414,7 +414,7 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
 
 - 父分支: 公共发布分支中的某一版本
 - 目标分支: 公共发布分支，master 和 公共开发分支，develop
-- 命名规则: ```hotfix/<branch name>```
+- 命名规则: ```hotfix/<branch name>``` 或者 ```hotfix/<project name>/<branch name>```
 
 >**Note:**
 
@@ -427,7 +427,7 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
 1.  从公共发布分支中检出特定版本的代码（比如是针对1.4.1版本的hotfix）：
 
     ```bash
-        git checkout -b hotfix/GDM-issue-010-version-1.4.1 <project name>@<version>
+        git checkout -b hotfix/GitDemo/GDM-issue-010-version-1.4.1 <project name>@<version>
     ```
 
 2.  完成 hotfix 的开发工作；
@@ -435,7 +435,7 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
 3.  使用 [```git tag```][19] 为代码库更新版本；
     ```bash
         git tag -a <project name>@<new version>-hotfix
-        git push origin <project name>@<new version>-hotfix hotfix/GDM-issue-010-version-1.4.1  
+        git push origin <project name>@<new version>-hotfix hotfix/GitDemo/GDM-issue-010-version-1.4.1  
     ```
 
 4.  将分支推送到编译服务器上的 git 仓库，尝试编译并且打出版本包；
@@ -447,11 +447,11 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
     ```bash
         git checkout GitDemo-Release
         git pull origin GitDemo-Release
-        git merge hotfix/GDM-issue-010-version-1.4.1
+        git merge hotfix/GitDemo/GDM-issue-010-version-1.4.1
         git push origin GitDemo-Release
         git checkout GitDemo
         git pull origin GitDemo
-        git merge hotfix/GDM-issue-010-version-1.4.1
+        git merge hotfix/GitDemo/GDM-issue-010-version-1.4.1
         git push origin GitDemo
     ```
     
@@ -473,7 +473,7 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
 [Workflow]: #workflow
 
 <!-- Links -->
-[1]: ./git-command-git-init..md
+[1]: ./git-command-git-init.md
 [2]: ./git-file-gitignore.md
 [3]: ./git-file-readme.md
 [4]: https://github.com/github/gitignore
@@ -504,7 +504,7 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
 [m5]: ./media/git-workflow/git-clone.png
 [m6]: ./media/git-workflow/git-feature-branch.png
 [m7]: ./media/git-workflow/example-git-create-feature-branch.png
-[m8]: ./media/git-workflow/example-git-create-feature-branch2.png
+[m8]: ./media/git-workflow/example-git-create-feature-branch-2.png
 [m9]: ./media/git-workflow/example-feature-branch-first-commit.png
 [m10]: ./media/git-workflow/example-feature-branch-first-commit-codes.png
 [m11]: ./media/git-workflow/example-go-to-lunch.png
