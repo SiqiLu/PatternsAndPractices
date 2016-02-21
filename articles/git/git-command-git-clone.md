@@ -6,17 +6,17 @@
 
 ##Usage
 
+从地址为 ```<original repository>``` 的代码库在本地创建一个本地工作副本。原项目的地址可以是本地的文件路径、或者远程的HTTP协议链接、也可以是远程的SSH协议链接。推荐使用SSH协议和HTTPS协议。
+
 ```bash
 git clone <original repository>
 ```
 
-从地址为 ```<original repository>``` 的代码库在本地创建一个本地工作副本。原项目的地址可以是本地的文件路径、或者远程的HTTP协议链接、也可以是远程的SSH协议链接。推荐使用SSH协议和HTTPS协议。
+从地址为 ```<original repository>``` 的代码库在本地创建一个本地工作副本，并且设置该副本在本地的目录名为 ```<directory>``` 。
 
 ```bash
 git clone <repo> <directory>
 ```
-
-从地址为 ```<original repository>``` 的代码库在本地创建一个本地工作副本，并且设置该副本在本地的目录名为 ```<directory>``` 。
 
 ##Discussion
 
