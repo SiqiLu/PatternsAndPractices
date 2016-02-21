@@ -1,5 +1,7 @@
 #Git init
 
+![```git init``` 示意图][m1]
+
 ```git init``` 命令用于创建一个新的 Git 仓库。不仅可以用于创建一个不包含任何文件的空项目，也可以将现有的、未版本控制的项目转换为 Git 项目。这通常是你将在一个新的项目中运行的第一个命令。
 
 执行 ```git init``` 命令会在项目的根目录创建一个 ```.git``` 隐藏目录，它用于存放 git 管理项目所需的所有元数据。
@@ -33,3 +35,6 @@
 [1]: ./git-articles-overview.md
 [2]: https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-init
 [3]: ./git-command-git-clone.md
+
+<!-- Images -->
+[m1]: ./media/git-command-git-init/git-init.png
