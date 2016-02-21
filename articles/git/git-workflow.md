@@ -1,6 +1,6 @@
 #Git workflow
 
-![Git workflow][m0]
+![Git workflow][m1]
 
 此文档会详细说明推荐使用的 git 工作流。该工作流包含以下步骤：
 
@@ -70,15 +70,15 @@
 
 1.  创建 repository：
 
-    ![创建 repository][m1]
+    ![创建 repository][m2]
 
 2.  初始化项目：
 
-    ![初始化项目][m2]
+    ![初始化项目][m3]
     
 3.  将新建立的项目推送到中央代码库：
 
-    ![推送新创建的代码库][m3]
+    ![推送新创建的代码库][m4]
     
 ###Set up a new branch
 
@@ -117,7 +117,7 @@
 
     例如：
 
-    ![通过创建 branch 建立新项目][m4]
+    ![通过创建 branch 建立新项目][m5]
 
 ##Git clone
 
@@ -136,11 +136,11 @@
 
 例如：
 
-![使用 ```git clone``` 创建本地代码副本][m5]
+![使用 ```git clone``` 创建本地代码副本][m6]
 
 ##Feature branch
 
-![Git feature branch][m6]
+![Git feature branch][m7]
 
 Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(bugfix)、发布准备(release)、生产补丁(hotfix)都应该在专门的分支（下文中统一称为功能分支--feature branch）上进行，而开发分支（dev 分支或者其它的指定开发分支）和发布分支（master 分支或者其它的指定发布分支）只用来合并经过评审的稳定的分支（下文中统一称为 公共分支）。
 
@@ -198,7 +198,7 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
 
 1.  Mary 创建新分支：
 
-    ![Mary 创建新分支][m7] 
+    ![Mary 创建新分支][m8] 
 
     在Mary开发新功能的代码之前，她首先需要创建一个新的独立分支，她应该使用如下命令创建分支，其中功能分支名为feature/GitDemo/GDM-issue-001-hello-world，表明该分支是针对GitDemo项目的GDM-issue-001任务的功能开发：
 
@@ -213,7 +213,7 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
     ```
 
     实际操作情况应该和下图类似：
-    ![创建功能分支的图示][m8]
+    ![创建功能分支的图示][m9]
 
     通过以上命令可以将当前 git 工作区切换到 feature/GitDemo/GDM-issue-001-hello-world 分支上，而 -b 操作符表示当需要的分支不存在时则基于 GitDemo 分支创建新分支。在这个分支上可以添加新代码、修改缺陷、暂存变更、提交变更，在这个独立的分支上可以提交任意多的提交，但是需要注意所有的代码变动和提交必需是聚焦在该分支对应的新功能上，不能随意修改继承来的老代码，否则会因为对原有的代码库冲击过大，而合并的时候非常困难。
 
@@ -223,14 +223,14 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
         git commit -m "<commit message>"
     ```
     实际操作情况应该和下图类似：
-    ![在功能分支中提交代码][m9]
+    ![在功能分支中提交代码][m20]
     
     本次提交的代码：
-    ![在功能分支中第一次提交的代码][m10]
+    ![在功能分支中第一次提交的代码][m21]
     
 2.  将功能分支推送到中央代码库中：
 
-    ![Mary 暂离][m11]
+    ![Mary 暂离][m22]
 
     Mary 由于开会或者吃午饭需要暂时离开工作，在她离开之前，最好将手头正在开发的功能分支代码推送到中央代码库中，防止该代码分支丢失。如果Mary是和其他同事一起开发此功能，她就需要经常将该分支推送到中央代码库以和其他同事协作。
 
@@ -239,7 +239,7 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
     ```
     
     实际操作情况应该和下图类似：
-    ![将功能分支推送到中央代码库][m12]
+    ![将功能分支推送到中央代码库][m23]
     
     >**Tip:**
 
@@ -259,12 +259,12 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
 
 1.  Mary 完成功能分支上的开发工作：
 
-    ![Mary 完成功能开发][m13] 
+    ![Mary 完成功能开发][m24] 
     
 2.  Mary 尝试合并(merge)公共分支的代码以确认功能分支上开发的代码与公共分支上的代码没有冲突，一般只需要检查是否和公共开发分支上的代码是否有冲突：
 
     合并前的分支情况：
-    ![功能分支合并公共分支前的示意图][m14]
+    ![功能分支合并公共分支前的示意图][m25]
     
     >**Note:**
     
@@ -273,12 +273,12 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
     ```bash
         git merge GitDemo
     ```
-    ![在功能分支上合并开发分支][m15]
+    ![在功能分支上合并开发分支][m26]
     
     如果合并的过程中没有发现冲突，则不需要额外的操作。如果遇到冲突，则需要在功能分支上处理冲突，并且提交处理完冲突的版本。这种方式可以把冲突隔离到相对独立的功能分支中，使得公共分支上不会有冲突的代码。
     
     合并后的分支情况：
-    ![功能分支合并公共分支后的示意图][m16]
+    ![功能分支合并公共分支后的示意图][m27]
     
     >**Note:**
     
@@ -286,11 +286,11 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
 
 3.  Mary将合并后的分支推送到中央代码库：
 
-    ![Mary 推送合并后的功能分支][m17]
+    ![Mary 推送合并后的功能分支][m28]
 
 4.  Mary 使用GUI工具创建 ```pull request```:
 
-    ![创建 ```pull request```][m18]
+    ![创建 ```pull request```][m29]
     
     >**Note:**
     
@@ -299,11 +299,11 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
 5.  团队的项目管理者 John 收到
  Mary 的 ```pull request``` 通知，并且组织代码评审：
         
-     ![收到 ```pull request``` 通知][m19]
+     ![收到 ```pull request``` 通知][m30]
      
-     ![收到 ```pull request``` 通知][m20]
+     ![收到 ```pull request``` 通知][m31]
      
-     ![处理 ```pull request```][m21]
+     ![处理 ```pull request```][m32]
      
      代码评审的基本流程为：
      1. 查看功能分支中的代码功能、风格、单元测试是否符合交付标准。如果不通过，则拒绝合并 ```pull request```，开发人员继续该功能分支的代码修改，之后发起新的 ```pull request```；如果通过，进入下一步。
@@ -318,7 +318,7 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
         git push origin GitDemo
      ```
     实际操作情况应该和下图类似：
-    ![接受 ```pull request```][m22]
+    ![接受 ```pull request```][m33]
 
 ##Workflow
 
@@ -331,7 +331,7 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
 - 目标分支: 公共开发分支，develop
 - 命名规则: ```feature/<branch name>``` 或者 ```feature/<project name>/<branch name>```
 
-![git-feature-branches][m23]
+![git-feature-branches][m34]
 
 每一个新功能的开发，都应该创建一个独立的分支，分支名称应该符合规则 ```feature/<branch name>``` 或者 ```feature/<project name>/<branch name>``` 并且推送到中央代码库进行备份以及团队协作。用于功能开发的分支应该使用公共开发分支作为它的父分支，即分支创建的时候，应该以dev或者团队指定的公共开发分支作为代码基线。当一个用于功能开发的功能分支经过评审后应该合并进公共开发分支。
 
@@ -355,7 +355,7 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
 - 目标分支: 公共发布分支，master 和 公共开发分支，develop
 - 命名规则: ```release/<branch name>``` 或者 ```release/<project name>/<branch name>```
 
-![git-release-branches][m24]
+![git-release-branches][m35]
 
 一旦开发完成足够的功能，并且代码均经过评审和开发阶段自测，则可以准备进行版本发布。在进行发布准备之前，一般已经将现有的 ```Feature branches``` 和 ```Bugfix branches``` 进行了合并。在这个分支中，团队主要完成release notes的编写、部署文档的编写、编译脚本的编写、还要为该版本创建一个合适的版本号。完成这些工作之后，可以将该分支推送到中央代码库中，并且使用持续集成工具（编译服务器）进行发布包的创建。
 
@@ -420,7 +420,7 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
 
 > Hotfix分支的合并方法比较复杂，可能需要在公共分支上解决冲突，而且有可能导致后续的很多功能分支出现代码冲突。
 
-![git-release-branches][m25]
+![git-release-branches][m36]
 
 ```Hotfix branches```  是用于对生产环境进行补丁工作的分支。这也是唯一一种从公共发布分支创建的分支类型。并且为了尽快发布，针对这个补丁的功能开发、缺陷修复、发布准备不再细分分支，而是统一在该 ```Hotfix branches``` 中进行。但是依旧要通过 ```pull request``` 的方式合并进公共分支。特别要注意的是，hotfix 过程中会进行发布，需要更新代码的版本号。
 
@@ -496,29 +496,29 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
 [21]: https://www.atlassian.com/git/tutorials
 
 <!-- Images -->
-[m0]: ./media/git-workflow/git-workflow.png
-[m1]: ./media/git-workflow/git-init.png
-[m2]: ./media/git-workflow/git-init-commit.png
-[m3]: ./media/git-workflow/git-push-repository.png
-[m4]: ./media/git-workflow/git-create-branch.png
-[m5]: ./media/git-workflow/git-clone.png
-[m6]: ./media/git-workflow/git-feature-branch.png
-[m7]: ./media/git-workflow/example-git-create-feature-branch.png
-[m8]: ./media/git-workflow/example-git-create-feature-branch-2.png
-[m9]: ./media/git-workflow/example-feature-branch-first-commit.png
-[m10]: ./media/git-workflow/example-feature-branch-first-commit-codes.png
-[m11]: ./media/git-workflow/example-go-to-lunch.png
-[m12]: ./media/git-workflow/example-feature-branch-git-push.png
-[m13]: ./media/git-workflow/example-finish-feature.png
-[m14]: ./media/git-workflow/example-before-feature-merge-master.png
-[m15]: ./media/git-workflow/example-feature-merge-master.png
-[m16]: ./media/git-workflow/example-after-feature-merge-master.png
-[m17]: ./media/git-workflow/example-push-feature-branch.png
-[m18]: ./media/git-workflow/example-create-pull-request.png
-[m19]: ./media/git-workflow/example-receive-pull-request.png
-[m20]: ./media/git-workflow/example-access-pull-request.png
-[m21]: ./media/git-workflow/example-comment-pull-request.png
-[m22]: ./media/git-workflow/example-accept-pull-request.png
-[m23]: ./media/git-workflow/git-workflow-feature-branches.png
-[m24]: ./media/git-workflow/git-workflow-release-branches.png
-[m25]: ./media/git-workflow/git-workflow-hotfix-branches.png
+[m1]: ./media/git-workflow/git-workflow.png
+[m2]: ./media/git-workflow/git-init.png
+[m3]: ./media/git-workflow/git-init-commit.png
+[m4]: ./media/git-workflow/git-push-repository.png
+[m5]: ./media/git-workflow/git-create-branch.png
+[m6]: ./media/git-workflow/git-clone.png
+[m7]: ./media/git-workflow/git-feature-branch.png
+[m8]: ./media/git-workflow/example-git-create-feature-branch.png
+[m9]: ./media/git-workflow/example-git-create-feature-branch-2.png
+[m20]: ./media/git-workflow/example-feature-branch-first-commit.png
+[m21]: ./media/git-workflow/example-feature-branch-first-commit-codes.png
+[m22]: ./media/git-workflow/example-go-to-lunch.png
+[m23]: ./media/git-workflow/example-feature-branch-git-push.png
+[m24]: ./media/git-workflow/example-finish-feature.png
+[m25]: ./media/git-workflow/example-before-feature-merge-master.png
+[m26]: ./media/git-workflow/example-feature-merge-master.png
+[m27]: ./media/git-workflow/example-after-feature-merge-master.png
+[m28]: ./media/git-workflow/example-push-feature-branch.png
+[m29]: ./media/git-workflow/example-create-pull-request.png
+[m30]: ./media/git-workflow/example-receive-pull-request.png
+[m31]: ./media/git-workflow/example-access-pull-request.png
+[m32]: ./media/git-workflow/example-comment-pull-request.png
+[m33]: ./media/git-workflow/example-accept-pull-request.png
+[m34]: ./media/git-workflow/git-workflow-feature-branches.png
+[m35]: ./media/git-workflow/git-workflow-release-branches.png
+[m36]: ./media/git-workflow/git-workflow-hotfix-branches.png
