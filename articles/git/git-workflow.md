@@ -426,7 +426,7 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
 
 ```Hotfix branches```  是用于对生产环境进行补丁工作的分支。这也是唯一一种从公共发布分支创建的分支类型。并且为了尽快发布，针对这个补丁的功能开发、缺陷修复、发布准备不再细分分支，而是统一在该 ```Hotfix branches``` 中进行。但是依旧要通过 ```pull request``` 的方式合并进公共分支。特别要注意的是，hotfix 过程中会进行发布，需要更新代码的版本号。
 
-1.  从公共发布分支中检出特定版本的代码（比如是针对1.4.1版本的hotfix）：
+1.  从公共发布分支中签出特定版本的代码（比如是针对1.4.1版本的hotfix）：
 
     ```bash
         git checkout -b hotfix/GitDemo/GDM-issue-010-version-1.4.1 <project name>@<version>
