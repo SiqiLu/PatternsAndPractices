@@ -87,14 +87,17 @@ Git 并不会强制要求提交信息遵循特定的格式，但是一般会在�
 ##More resources
 
 - [Git overview article][1]
-- [Git tutorials: Setting up a repository][2]
-- [Git status][3]
+- [Git tutorials: Saving changes][2]
+- [Git commit --amend][3]
+- [Git status][4]
+
 
 <!-- Links -->
 [1]: ./git-articles-overview.md
-[2]: https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-init
-[3]: ./git-command-git-status.md
-[4]: ./git-command-git-config.md
+[2]: https://www.atlassian.com/git/tutorials/saving-changes
+[3]: ./git-commit-amend.md
+[4]: ./git-command-git-status.md
+
 
 <!-- Images -->
 [m1]: ./media/git-command-git-commit/git-commit.png
