@@ -108,5 +108,5 @@ git config --global alias.ci commit
 
 <!-- Links -->
 [1]: ./git-articles-overview.md
-[2]: https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-init
+[2]: https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-config
 [3]: ./git-command-git-add.md
