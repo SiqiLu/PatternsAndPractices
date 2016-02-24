@@ -1,6 +1,6 @@
 #Git commit --amend
 
-```git commit --amend``` 命令是修改最近一次提交的最简单的方法，该方法只能添加新的变更到最近的一次提交中或者修改最近一次提交的提交信息。该命令会将暂存区中的变更和最近一个提交的变更合并为一个变更集，并且允许你再次修改提交信息，从而达到修改最近一次提交的效果，该命名不会创建新的提交。
+```git commit --amend``` 命令是修改最近一次提交的最简单的方法，该方法只能添加新的变更文件到最近的一次提交中或者修改最近一次提交的提交信息。该命令会将暂存区中的变更集和最近一个提交的变更集合并为一个变更集，并且允许你再次修改提交信息，从而达到修改最近一次提交的效果，该命名不会创建新的提交。
 
 ![```git commit --amend``` 示意图][m1]
 
@@ -8,7 +8,7 @@ Git 修改提交实际上并不是修改了最近一次提交，而是完全替�
 
 ##Usage
 
-合并暂存区的变更和最近一次提交中的所有变更，将产生的新变更集提交，并且完全覆盖最近一次的提交。当然该命令也可以用于仅仅修改最近一次提交的提交信息。
+合并暂存区的变更集和最近一次提交中的所有变更集，将产生的新变更集提交，并且完全覆盖最近一次的提交。当然该命令也可以用于仅仅修改最近一次提交的提交信息。
 
 ```bash
     git commit --amend
@@ -16,7 +16,7 @@ Git 修改提交实际上并不是修改了最近一次提交，而是完全替�
 
 ##Discussion   
 
-在日常开发中，经常会有不完善的提交。很容易在提交中遗漏部分变更的文件，也可能忘记格式化提交信息。使用 ```git commit --amend``` 命令是修复这些问题的很方便的方法。
+在日常开发中，经常会有不完善的提交。很容易在提交中遗漏部分有变更的文件，也可能忘记格式化提交信息。使用 ```git commit --amend``` 命令是修复这些问题的很方便的方法。
 
 ###不要修改公共的提交
 
@@ -49,12 +49,13 @@ git commit --amend --no-edit
 - [Git overview article][1]
 - [Git tutorials: Rewriting history][2]
 - [Git commit][3]
+- [Git checkout][4]
 
 <!-- Links -->
 [1]: ./git-articles-overview.md
-[2]: https://www.atlassian.com/git/tutorials/rewriting-history
+[2]: https://www.atlassian.com/git/tutorials/rewriting-history/git-commit--amend
 [3]: ./git-command-git-commit.md
-[4]: ./git-command-git-reset.md
+[4]: ./git-command-git-checkout.md
 
 <!-- Images -->
 [m1]: ./media/git-commit-amend/git-commit-amend.png
