@@ -26,6 +26,14 @@ Git 系列文章主要涵盖三部分内容。
 
 - [Git commit](./git-command-git-commit.md)
 
+- [Git status](./git-command-git-status.md)
+
+- [Git log](./git-command-git-log.md)
+
+##Git files
+
+- [gitignore](./git-file-gitignore.md)
+
 ##Git undo or rewriting history
 
 - [Git commit --amend](./git-commit-amend.md)
