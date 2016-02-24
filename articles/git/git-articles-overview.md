@@ -22,6 +22,8 @@ Git 系列文章主要涵盖三部分内容。
 
 - [git add](./git-command-git-add.md)
 
+- [git commit](./git-command-git-commit.md)
+
 ##Git tools
 - [官方git](https://git-scm.com/downloads)
 
