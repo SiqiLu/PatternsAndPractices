@@ -61,12 +61,12 @@ Git 的 ```add``` 命令和 SVN 的 ```add``` 命令不同。不同于 SVN 的 `
 ##More resources
 
 - [Git overview article][1]
-- [Git tutorials: Setting up a repository][2]
+- [Git tutorials: Saving changes][2]
 - [Git commit][3]
 
 <!-- Links -->
 [1]: ./git-articles-overview.md
-[2]: https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-init
+[2]: https://www.atlassian.com/git/tutorials/saving-changes
 [3]: ./git-command-git-commit.md
 
 <!-- Images -->
