@@ -10,22 +10,29 @@ Git 系列文章主要涵盖三部分内容。
 
 ##General
 
-- 推荐使用的 git 工作流 [Git workflow](./git-workflow.md)
+- 推荐使用的 Git 工作流 [Git workflow](./git-workflow.md)
+
+- 不要使用的 Git 功能
 
 ##Git commands
 
-- [git init](./git-command-git-init.md)
+- [Git init](./git-command-git-init.md)
 
-- [git clone](./git-command-git-clone.md)
+- [Git clone](./git-command-git-clone.md)
 
-- [git config](./git-command-git-config.md)
+- [Git config](./git-command-git-config.md)
 
-- [git add](./git-command-git-add.md)
+- [Git add](./git-command-git-add.md)
 
-- [git commit](./git-command-git-commit.md)
+- [Git commit](./git-command-git-commit.md)
+
+##Git undo or rewriting history
+
+- [Git commit --amend](./git-commit-amend.md)
 
 ##Git tools
-- [官方git](https://git-scm.com/downloads)
+
+- [官方 Git](https://git-scm.com/downloads)
 
 - [Git for windows](https://git-for-windows.github.io/)
 
