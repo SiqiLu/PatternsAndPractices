@@ -246,6 +246,8 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
     > 可以使用 ```git gc``` 命令对代码仓库进行垃圾回收，可以提升代码仓库的性能。
 
 ##Pull Request
+ 
+![```pull request``` 示意图][m37]
 
 除了隔离功能开发，使用功能分支并且通过 [```pull request```][16] 发起代码合并请求可以在功能代码合并进公共分支之前，提供合适的代码评审和沟通的方式和时机。一旦有人完成一个功能的开发，团队不会立即将代码合并。相反，开发人员在完成功能的开发后，会将对应的功能分支推送到中央代码库上，并且发起一个 ```pull request``` 通知团队的其他成员进行代码评审，并且在评审后将整个分支进行提交整理再合并到团队的公共分支中。
 
@@ -522,3 +524,4 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
 [m34]: ./media/git-workflow/git-workflow-feature-branches.png
 [m35]: ./media/git-workflow/git-workflow-release-branches.png
 [m36]: ./media/git-workflow/git-workflow-hotfix-branches.png
+[m37]: ./media/git-workflow/git-workflow-pull-request.png
