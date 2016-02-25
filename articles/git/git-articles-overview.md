@@ -32,7 +32,9 @@ Git 系列文章主要涵盖三部分内容。
 
 - [Git log](./git-command-git-log.md)
 
-- [Git checkout](./git-command-git-log.md)
+- [Git checkout](./git-command-git-checkout.md)
+
+- [Git revert](./git-command-git-revert.md)
 
 ##Git files
 
