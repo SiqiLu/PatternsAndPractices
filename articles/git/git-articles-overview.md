@@ -36,6 +36,22 @@ Git 系列文章主要涵盖三部分内容。
 
 - [Git revert](./git-command-git-revert.md)
 
+- [Git reset](./git-command-git-reset.md)
+
+- [Git clean](./git-command-git-clean.md)
+
+- [Git remote](./git-command-git-remote.md)
+
+- [Git fetch](./git-command-git-fetch.md)
+
+- [Git pull](./git-command-git-pull.md)
+
+- [Git push](./git-command-git-push.md)
+
+- [Git branch](./git-command-git-branch.md)
+
+- [Git merge](./git-command-git-merge.md)
+
 ##Git files
 
 - [gitignore](./git-file-gitignore.md)
