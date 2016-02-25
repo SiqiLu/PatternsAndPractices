@@ -12,6 +12,8 @@ Git 系列文章主要涵盖三部分内容。
 
 - 推荐使用的 Git 工作流 [Git workflow](./git-workflow.md)
 
+- 撤销 Git 中的操作 [Undo anything in Git](./git-undo-anything.md)
+
 - 不要使用的 Git 功能
 
 ##Git commands
@@ -29,6 +31,8 @@ Git 系列文章主要涵盖三部分内容。
 - [Git status](./git-command-git-status.md)
 
 - [Git log](./git-command-git-log.md)
+
+- [Git checkout](./git-command-git-log.md)
 
 ##Git files
 
