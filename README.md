@@ -35,9 +35,7 @@
 
 - [Markdown editor: Atom][5]
 
-- [Markdown editor: Visual Studio Code][6]
-
-- [Markdown editor online: Stack Edit][7]
+- [Markdown editor online: Stack Edit][6]
 
 ## More resources
 
@@ -49,5 +47,4 @@
 [3]: http://www.emoji-cheat-sheet.com/
 [4]: https://www.visualstudio.com/products/code-vs
 [5]: https://atom.io/
-[6]: https://www.visualstudio.com/products/code-vs
-[7]: https://stackedit.io/ 
+[6]: https://stackedit.io/ 
