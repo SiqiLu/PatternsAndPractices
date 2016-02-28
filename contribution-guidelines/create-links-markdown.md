@@ -1,6 +1,6 @@
 # Create links in markdown
 
-在markdown文件中使用链接。
+在 markdown 文件中使用链接。
 
 ## Guidelines
 
@@ -40,26 +40,26 @@
 主题目录中的文档链接到另一个主题目录中的文档：
 
     [link text](../topic-directory/article-name.md)
- 
+
 链接到同目录中的其他文档：
 
     [link text](article-name.md)
 
 
-不需要为文档创建锚点 - 一般的网站在渲染markdown文件的时候，比如github，会自动为H1、H2、H3标题创建锚点，只要创建链接指向标题块即可：
+不需要为文档创建锚点 - 一般的网站在渲染 markdown 文件的时候，比如 GitHub，会自动为 H1、H2、H3 标题创建锚点，只要创建链接指向标题块即可：
 
     [link](#the-text-of-the-header-section-separated-by-hyphens)
     [Create cache](#create-cache)
 
 链接到同目录中的其他文档内的锚点：
 
-    [link text](article-name.md#anchor-name)
-    [Configure your profile](media-services-create-account.md#configure-your-profile)
+    [link text](./article-name.md#anchor-name)
+    [Configure your profile](./media-services-create-account.md#configure-your-profile)
 
-根目录中的文档链接到其他目录中的其他文档内的锚点：
+根目录中的文档链接到其他目录中的文档内的锚点：
 
-    [link text](topic-directory/article-name.md#anchor-name)
-    [Configure your profile](topic-directory/media-services-create-account.md#configure-your-profile)
+    [link text](./topic-directory/article-name.md#anchor-name)
+    [Configure your profile](./topic-directory/media-services-create-account.md#configure-your-profile)
 
 ## Reference-style links
 

@@ -14,8 +14,8 @@
 - 文档名中不能包含空格和特殊字符。
 - 使用英文小写字母。
 - 名称不要超过80个字母。
-- 动词使用一般现在时态，如 develop, buy, build, troubleshoot。不要额外使用ing后缀。
-- 所有的文件必须使用markdown格式，并且使用 .md 作为文件后缀名。
+- 动词使用一般现在时态，如 develop, buy, build, troubleshoot。不要额外使用 ing 后缀。
+- 所有的文件必须使用 markdown 格式，并且使用 .md 作为文件后缀名。
 
 ##Pattern
 
@@ -41,7 +41,6 @@
 
 - [Overview article](./../README.md)
 - [Index of the contribution guidelines](./contribution-guidelines-index.md)
-
 
 <!--Anchors-->
 [Rules]: #rules
