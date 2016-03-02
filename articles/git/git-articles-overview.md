@@ -2,11 +2,11 @@
 
 Git 系列文章主要涵盖三部分内容。
 
-1. 推荐使用的 git workflow 及对此工作流的详细描述；
+1. 推荐使用的 Git workflow 及对此工作流的详细描述；
 
-2. git 的常用命令、基本使用方法和常用配置；
+2. Git 的常用命令、基本使用方法和常用配置；
 
-3. git 的工具、相关文档和书籍。
+3. Git 的工具、相关文档和书籍。
 
 ##General
 
@@ -14,7 +14,7 @@ Git 系列文章主要涵盖三部分内容。
 
 - 撤销 Git 中的操作 [Undo anything in Git](./git-undo-anything.md)
 
-- 不要使用的 Git 功能
+- 不要使用的 Git 功能 [Don't do in Git](./git-do-not-do.md)
 
 ##Git commands
 
@@ -56,9 +56,21 @@ Git 系列文章主要涵盖三部分内容。
 
 - [gitignore](./git-file-gitignore.md)
 
+- [README.md](./git-file-readme.md)
+
 ##Git undo or rewriting history
 
+- 撤销 Git 中的操作 [Undo anything in Git](./git-undo-anything.md)
+
 - [Git commit --amend](./git-commit-amend.md)
+
+- [Git checkout](./git-command-git-checkout.md)
+
+- [Git revert](./git-command-git-revert.md)
+
+- [Git reset](./git-command-git-reset.md)
+
+- [Git clean](./git-command-git-clean.md)
 
 ##Git tools
 
