@@ -198,7 +198,7 @@
 <!-- Links -->
 [1]: ./git-articles-overview.md
 [2]: https://www.atlassian.com/git/tutorials/viewing-old-commits
-[3]: https://www.atlassian.com/git/tutorials/undoing-changes/git-checkout
+[3]: https://www.atlassian.com/git/tutorials/undoing-changes#git-checkout
 [4]: https://www.atlassian.com/git/tutorials/using-branches/git-checkout
 [5]: https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting
 [6]: ./git-command-git-revert.md

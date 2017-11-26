@@ -69,7 +69,7 @@
 
 <!-- Links -->
 [1]: ./git-articles-overview.md
-[2]: https://www.atlassian.com/git/tutorials/undoing-changes/git-revert
+[2]: https://www.atlassian.com/git/tutorials/undoing-changes#git-revert
 [3]: https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting
 [4]: ./git-command-git-reset.md
 [5]: ./git-command-git-checkout.md

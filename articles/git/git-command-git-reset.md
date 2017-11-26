@@ -144,7 +144,7 @@ git reset --hard HEAD~2
 
 <!-- Links -->
 [1]: ./git-articles-overview.md
-[2]: https://www.atlassian.com/git/tutorials/undoing-changes/git-reset
+[2]: https://www.atlassian.com/git/tutorials/undoing-changes#git-reset
 [3]: https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting
 [4]: ./git-command-git-revert.md
 [5]: ./git-command-git-checkout.md
