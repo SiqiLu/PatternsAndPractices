@@ -1,4 +1,4 @@
-#Git workflow
+# Git workflow
 
 ![Git workflow][m1]
 
@@ -14,104 +14,103 @@
 
 - [使用 ```feature branch``` 进行开发、缺陷修复、发布和Hotfix][Workflow]
 
-
-##Initialize and set up a project
+## Initialize and set up a project
 
 - [创建全新的中央代码库][Set up a new repository]
 
 - [在已有的代码库中创建全新的项目分支][Set up a new branch]
 
-###Set up a new repository
+### Set up a new repository
 
 在使用 git 作为代码版本控制的项目中，一般建立项目指创建新的中央代码库 repository 并且提交初始化 commit 。
 
-1.  使用 [```git init```][1] 命令创建 repository 。代码库目录中会有一个 .git 子目录。
+1. 使用 [```git init```][1] 命令创建 repository 。代码库目录中会有一个 .git 子目录。
 
-    ```bash
+    ``` bash
         mkdir <project directory>
         cd <project directory>
         git init
     ```
 
     >**Tip:**
-
+    >
     > 也可以使用以下命令：
-    ```bash
+    ``` bash
         git init <project directory>
         cd <project directory>
     ```
 
-2.  初始化项目，为项目添加基本的 [gitignore][2] 文件和 [README.md][3] 文件。
+1. 初始化项目，为项目添加基本的 [gitignore][2] 文件和 [README.md][3] 文件。
 
-    ```bash
-        wget -Uri <gitignore file Uri from github gitignore repositor> -OutFile .gitignore   
+    ``` bash
+        wget -Uri <gitignore file Uri from github gitignore repositor> -OutFile .gitignore
         echo "#<project name>" >> README.md 
         git add .gitignore README.md
         git commit -m "init commit"
     ```
     >**Warning:**
-
+    >
     > 如果是在 Windows 的 PowerShell 中执行以上命令，```echo``` 命令输出的文本可能不是UTF-8编码，需要修改文件编码。
-    
+
     <!-- -->
-    
+
     >**Note:**
-
+    >
     > 你可以在 [github 的 gitignore 项目][4] 中找到所有常用的 gitignore 文件。
-    
-3.  使用 [```git remote```][5] 和 [```git push```][6] 命令，并且使用 -u 操作符，将初始化后的 repository 推送到中央代码库。
 
-    ```bash
+1. 使用 [```git remote```][5] 和 [```git push```][6] 命令，并且使用 -u 操作符，将初始化后的 repository 推送到中央代码库。
+
+    ``` bash
         git remote add origin <remote repository uri>
         git push -u origin master
     ```
 
 例如：
 
-1.  创建 repository：
+1. 创建 repository：
 
     ![创建 repository][m2]
 
-2.  初始化项目：
+1. 初始化项目：
 
     ![初始化项目][m3]
-    
-3.  将新建立的项目推送到中央代码库：
+
+1. 将新建立的项目推送到中央代码库：
 
     ![推送新创建的代码库][m4]
-    
-###Set up a new branch
+
+### Set up a new branch
 
 如果项目是将所有的项目共享在相同的 repository 中，则创建新项目是指在 respository 中创建新的分支(branch)。例如：jinyinmao.com.cn 的项目即是如此。
 
-1.  使用 [```git branch```][7] 命令从项目的初始分支（一般为master分支）创建新分支，根据项目的情况，可能需要创建多个分支（开发分支、发布分支）。
+1. 使用 [```git branch```][7] 命令从项目的初始分支（一般为master分支）创建新分支，根据项目的情况，可能需要创建多个分支（开发分支、发布分支）。
 
-    ```bash
+    ``` bash
         cd <project directory>
         git branch <new branch name> <init branch name>
         git checkout <new branch name>
     ```
 
     >**Tip:**
-
+    >
     > 也可以使用以下命令：
-    ```bash
+    ``` bash
         cd <project directory>
         git checkout <init branch name>
         git checkout -b <new branch name>
     ```
 
-2.  使用 [```git remote```][5] 和 [```git push```][6] 命令，并且使用 -u 操作符，将初始化后的 Repository 推送到中央代码库。
+1. 使用 [```git remote```][5] 和 [```git push```][6] 命令，并且使用 -u 操作符，将初始化后的 Repository 推送到中央代码库。
 
-    ```bash
+    ``` bash
         git remote add origin <remote Repository uri>
         git push -u origin <new branch name>
     ```
-    
-    >**Note:**
 
+    >**Note:**
+    >
     > 一般这个时候 remote 已经经过正确配置了，可以忽略 ```git remote add```，只执行如下命令即可：
-    ```bash
+    ``` bash
         git push -u origin <new branch name>
     ```
 
@@ -119,18 +118,19 @@
 
     ![通过创建 branch 建立新项目][m5]
 
-##Git clone
+## Git clone
 
 在开发工作开始之前，需要将中央代码库克隆到本地。使用 [```git clone```][8] 命令创建本地代码副本。
 
-```bash
-    git clone <remote repository uri> <directory>  
+``` bash
+    git clone <remote repository uri> <directory>
 ```
 
 >**Tip:**
-
+>
 > 使用以下命令创建本地代码副本，代码的目录名将使用项目的名称：
-```bash
+
+``` bash
     git clone <remote repository uri>
 ```
 
@@ -138,7 +138,7 @@
 
 ![使用 ```git clone``` 创建本地代码副本][m6]
 
-##Feature branch
+## Feature branch
 
 ![Git feature branch][m7]
 
@@ -148,67 +148,65 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
 
 团队使用 pull request 进行代码合并，每一次 pull request 都需要经过团队的 code review 才能合并进公共分支，以确保公共分支代码的稳定性和风格一致性。同时也有助于促进团队对功能开发和代码质量的沟通。
 
-###How It Works
+### How It Works
 
 团队使用一个统一的中央代码仓库，一般可以选择使用 [GitHub][9]、[GitHub Enterprise][10]、[Team Foundation Server][11]、[Bitbucket][12]、[GitLab][13] 搭建 git 服务器，并且托管中央代码仓库。而该代码仓库作为整个团队公认的代码仓库，也成为官方代码库或者中央代码库（下文中统一称为 中央代码库）。
 
 >**Warning:**
-
+>
 > 中央代码库指：托管在 git 服务器上的中央代码仓库。
-
+>
 > 公共分支指：团队约定的开发分支和发布分支的统称。
-
+>
 > 私有代码库指：维护在开发人员本地的代码仓库副本，与 中央代码库 相对应。
-
+>
 > 功能分支：指为开发独立功能而创建的独立代码分支，与 公共分支 相对应。
-
+>
 > 可以将功能分支托管到中央代码库中，公共分支也可以在私有代码库中存在副本。
-
+>
 > 注意区分概念。
 
 在工作中，如果需要开发新功能或者有新的代码提交，不能直接在私有代码库的公共分支上进行开发或者变更提交，即不能在本地的master、dev或者其他公共分支上提交。而是应该由开发人员创建一个新的功能分支进行开发。新分支的创建往往对应着开发人员开始解决某一任务项，功能分支应该具有描述性的名字并且分支名中只能包含 ASCII 字符， 功能分支的命名应该包含2部分，并且按照 ```<feature branch type>/<project name>/<feature branch name>``` 的格式命名（如果项目不是多项目共享 repository 的模式，则不需要在分支名称中包含 project name）。比较推荐的分支名可以是 feature/GieDemo/animated-menu-items 或者 bugfix/issue-#1061，可以透过分支名清晰地获知分支的目的、对应的工作和相关的资源。
 
 >**Note:**
-
+>
 > 功能分支有4中类型，分别是：
-
+>
 > 功能开发 - ```feature```;
-
+>
 > 缺陷修复 - ```bugfix```;
-
+>
 > 发布准备 - ```release```;
-
+>
 > 生产补丁 - ```hotfix```.
-
-
 
 功能分支在 git 功能上与公共分支没有任何区别。在功能分支上开发依旧是修改代码、暂存(stage)变更、提交变更集。相对应的命令是 [```git add```][14], [```git commit```][15]。
 
 功能分支可以只保留在本地，也可以推送到中央代码库。推送到中央代码库可以团队中其他的开发人员也可以一起开发该功能分支，并且可以对功能分支进行备份。
 
 >**Warning:**
-
+>
 > 即使功能分支被推送到中央代码库上，该分支依旧不是 公共分支 。
-
+>
 > 注意区分概念。
 
-###Example
+### Example
 
 以下示例演示如何使用功能分支进行新功能的开发、同样适用于修改BUG、hotfix、进行发布前准备。
 
-1.  Mary 创建新分支：
+1. Mary 创建新分支：
 
-    ![Mary 创建新分支][m8] 
+    ![Mary 创建新分支][m8]
 
     在Mary开发新功能的代码之前，她首先需要创建一个新的独立分支，她应该使用如下命令创建分支，其中功能分支名为feature/GitDemo/GDM-issue-001-hello-world，表明该分支是针对GitDemo项目的GDM-issue-001任务的功能开发：
 
-    ```bash
+    ``` bash
         git checkout -b feature/GitDemo/GDM-issue-001-hello-world dev
     ```
 
     或者（其中 GitDemo 是项目的公共开发分支）：
 
-    ```bash
+    ``` bash
         git checkout -b feature/GitDemo/GDM-issue-001-hello-world GitDemo
     ```
 
@@ -217,36 +215,36 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
 
     通过以上命令可以将当前 git 工作区切换到 feature/GitDemo/GDM-issue-001-hello-world 分支上，而 -b 操作符表示当需要的分支不存在时则基于 GitDemo 分支创建新分支。在这个分支上可以添加新代码、修改缺陷、暂存变更、提交变更，在这个独立的分支上可以提交任意多的提交，但是需要注意所有的代码变动和提交必需是聚焦在该分支对应的新功能上，不能随意修改继承来的老代码，否则会因为对原有的代码库冲击过大，而合并的时候非常困难。
 
-    ```bash
+    ``` bash
         git status
         git add <some-file>
         git commit -m "<commit message>"
     ```
     实际操作情况应该和下图类似：
     ![在功能分支中提交代码][m20]
-    
+
     本次提交的代码：
     ![在功能分支中第一次提交的代码][m21]
-    
-2.  将功能分支推送到中央代码库中：
+
+1. 将功能分支推送到中央代码库中：
 
     ![Mary 暂离][m22]
 
     Mary 由于开会或者吃午饭需要暂时离开工作，在她离开之前，最好将手头正在开发的功能分支代码推送到中央代码库中，防止该代码分支丢失。如果Mary是和其他同事一起开发此功能，她就需要经常将该分支推送到中央代码库以和其他同事协作。
 
-    ```bash
+    ``` bash
         git push -u origin feature/GitDemo/GDM-issue-001-hello-world
     ```
-    
+
     实际操作情况应该和下图类似：
     ![将功能分支推送到中央代码库][m23]
-    
-    >**Tip:**
 
+    >**Tip:**
+    >
     > 可以使用 ```git gc``` 命令对代码仓库进行垃圾回收，可以提升代码仓库的性能。
 
-##Pull Request
- 
+## Pull Request
+
 ![```pull request``` 示意图][m37]
 
 除了隔离功能开发，使用功能分支并且通过 [```pull request```][16] 发起代码合并请求可以在功能代码合并进公共分支之前，提供合适的代码评审和沟通的方式和时机。一旦有人完成一个功能的开发，团队不会立即将代码合并。相反，开发人员在完成功能的开发后，会将对应的功能分支推送到中央代码库上，并且发起一个 ```pull request``` 通知团队的其他成员进行代码评审，并且在评审后将整个分支进行提交整理再合并到团队的公共分支中。
@@ -257,77 +255,77 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
 
 ```pull request``` 的发起和合并一般可以使用成熟的 git 项目管理工具。比如 GitHub 和 Bitbucket。使用方法可以参考 [GitHub pull request documentation][17]、[Bitbucket Server pull request documentation][18]。
 
-###Example
+### Example
 
-1.  Mary 完成功能分支上的开发工作：
+1. Mary 完成功能分支上的开发工作：
 
-    ![Mary 完成功能开发][m24] 
-    
-2.  Mary 尝试合并(merge)公共分支的代码以确认功能分支上开发的代码与公共分支上的代码没有冲突，一般只需要检查是否和公共开发分支上的代码是否有冲突：
+    ![Mary 完成功能开发][m24]
+
+1. Mary 尝试合并(merge)公共分支的代码以确认功能分支上开发的代码与公共分支上的代码没有冲突，一般只需要检查是否和公共开发分支上的代码是否有冲突：
 
     合并前的分支情况：
     ![功能分支合并公共分支前的示意图][m25]
-    
+
     >**Note:**
-    
+    >    
     > 上图中的Master代指公共分支。该分支根据情况，可以是 master 分支、dev 分支或者其它的公共分支。在前面的示例中，该分支可以是 GitDemo 分支或者 GitDemo-Release 分支。
-    
-    ```bash
+
+    ``` bash
         git merge GitDemo
     ```
     ![在功能分支上合并开发分支][m26]
-    
+
     如果合并的过程中没有发现冲突，则不需要额外的操作。如果遇到冲突，则需要在功能分支上处理冲突，并且提交处理完冲突的版本。这种方式可以把冲突隔离到相对独立的功能分支中，使得公共分支上不会有冲突的代码。
-    
+
     合并后的分支情况：
     ![功能分支合并公共分支后的示意图][m27]
-    
+
     >**Note:**
-    
+    >    
     > 上图中的Master代指公共分支。该分支根据情况，可以是 master 分支、dev 分支或者其它的公共分支。在前面的示例中，该分支可以是 GitDemo 分支或者 GitDemo-Release 分支。
 
-3.  Mary将合并后的分支推送到中央代码库：
+1. Mary将合并后的分支推送到中央代码库：
 
     ![Mary 推送合并后的功能分支][m28]
 
-4.  Mary 使用GUI工具创建 ```pull request```:
+1. Mary 使用GUI工具创建 ```pull request```:
 
     ![创建 ```pull request```][m29]
-    
+
     >**Note:**
-    
+    >
     > 上图中的界面是Bitbucket的界面。
-    
-5.  团队的项目管理者 John 收到
+
+1. 团队的项目管理者 John 收到
  Mary 的 ```pull request``` 通知，并且组织代码评审：
-        
+
      ![收到 ```pull request``` 通知][m30]
-     
+
      ![收到 ```pull request``` 通知][m31]
-     
+
      ![处理 ```pull request```][m32]
-     
+
      代码评审的基本流程为：
      1. 查看功能分支中的代码功能、风格、单元测试是否符合交付标准。如果不通过，则拒绝合并 ```pull request```，开发人员继续该功能分支的代码修改，之后发起新的 ```pull request```；如果通过，进入下一步。
-     
-     2. 再次合并(merge)公共分支，确保在发起 ```pull request``` 到代码评审完成的期间，功能分支依旧和公共分支的代码没有冲突。如果有冲突，则拒绝合并 ```pull request```，开发人员继续在该功能分支上处理冲突，之后发起新的 ```pull request```；如果通过，进入下一步。
-     
-     3. 接受并且关闭 ```pull request```，将功能分支的代码合并进公共分支，最后将合并后的公共分支推送到中央代码库。
-     
-     ```bash
+
+     1. 再次合并(merge)公共分支，确保在发起 ```pull request``` 到代码评审完成的期间，功能分支依旧和公共分支的代码没有冲突。如果有冲突，则拒绝合并 ```pull request```，开发人员继续在该功能分支上处理冲突，之后发起新的 ```pull request```；如果通过，进入下一步。
+
+     1. 接受并且关闭 ```pull request```，将功能分支的代码合并进公共分支，最后将合并后的公共分支推送到中央代码库。
+
+     ``` bash
         git checkout GitDemo
-        git merge feature/GitDemo/GDM-issue-001-hello-world 
+        git merge feature/GitDemo/GDM-issue-001-hello-world
         git push origin GitDemo
      ```
     实际操作情况应该和下图类似：
     ![接受 ```pull request```][m33]
 
-##Workflow
+## Workflow
 
 团队可以使用 git 配合公共开发分支、公共发布分支和功能分支（功能）进行日常研发工作。
 但是分别在进行功能开发(feature)、缺陷修补(bugfix)、发布准备(release)、生产补丁(hotfix)四种场景下，工作的流程特别是分支的处理上还是会有略微差别。以下会详细说明。
 
-###Feature branches
+### Feature branches
 
 - 父分支: 公共开发分支，develop
 - 目标分支: 公共开发分支，develop
@@ -338,10 +336,10 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
 每一个新功能的开发，都应该创建一个独立的分支，分支名称应该符合规则 ```feature/<branch name>``` 或者 ```feature/<project name>/<branch name>``` 并且推送到中央代码库进行备份以及团队协作。用于功能开发的分支应该使用公共开发分支作为它的父分支，即分支创建的时候，应该以dev或者团队指定的公共开发分支作为代码基线。当一个用于功能开发的功能分支经过评审后应该合并进公共开发分支。
 
 >**Note:**
-
+>
 > Master代指公共发布分支，Develop代指公共开发分支。
 
-###Bugfix branches
+### Bugfix branches
 
 - 父分支: 公共开发分支，develop
 - 目标分支: 公共开发分支，develop
@@ -351,7 +349,7 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
 
 特别是用于缺陷修复的分支应该只包含很少量的代码变更，方法测试人员进行针对性的回归测试。而如果某个缺陷需要大量修改代码来修复，则可以直接将该缺陷的修复看作是一个功能点的重新开发，使用 ```Feature branches``` 进行。
 
-###Release branches
+### Release branches
 
 - 父分支: 公共开发分支，develop
 - 目标分支: 公共发布分支，master 和 公共开发分支，develop
@@ -367,9 +365,9 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
 
 由于发布准备实际需要很多的工作，使用独立分支进行发布准备，可以为一些特定于发布的工作定义良好的阶段，从而可以显式地进行发布准备工作。
 
-1.  创建新分支；
+1. 创建新分支；
 
-    ```bash
+    ``` bash
         git checkout GitDemo-Release
         git pull origin GitDemo-Release
         git checkout GitDemo
@@ -379,29 +377,29 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
         git push -u origin release/GitDemo/GDM-issue-010-version-1.4
     ```
 
-2.  进行发布准备工作；
+1. 进行发布准备工作；
 
-    ```bash
+    ``` bash
         git add <some-file>
         git commit -m "commit message"
         git push -u origin release/GitDemo/GDM-issue-010-version-1.4
-    ```  
+    ```
 
-3.  使用 [```git tag```][19] 为代码库添加版本；
+1. 使用 [```git tag```][19] 为代码库添加版本；
 
-    ```bash
+    ``` bash
         git checkout release/GitDemo/GDM-issue-010-version-1.4
         git pull origin GitDemo
         git tag <project name>@<version> -m "Version <project name>@<version>"
         git push origin <project name>@<version> release/GitDemo/GDM-issue-010-version-1.4
     ```
-4.  将分支推送到编译服务器上的 git 仓库，尝试编译并且打出版本包；
+1. 将分支推送到编译服务器上的 git 仓库，尝试编译并且打出版本包；
 
-5.  如果版本号能够成功使用，则创建 ```pull request``` 并且完成评审工作；
+1. 如果版本号能够成功使用，则创建 ```pull request``` 并且完成评审工作；
 
-6. 合并分支，并且将合并后的分支推送到中央代码库。
+1. 合并分支，并且将合并后的分支推送到中央代码库。
 
-    ```bash
+    ``` bash
         git checkout GitDemo-Release
         git pull origin GitDemo-Release
         git merge release/GitDemo/GDM-issue-010-version-1.4
@@ -411,7 +409,7 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
         git merge release/GitDemo/GDM-issue-010-version-1.4
         git push origin GitDemo
     ```
-    
+
 ###Hotfix branches
 
 - 父分支: 公共发布分支中的某一版本
@@ -419,34 +417,34 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
 - 命名规则: ```hotfix/<branch name>``` 或者 ```hotfix/<project name>/<branch name>```
 
 >**Note:**
-
+>
 > Hotfix分支的合并方法比较复杂，可能需要在公共分支上解决冲突，而且有可能导致后续的很多功能分支出现代码冲突。
 
 ![git-release-branches][m36]
 
 ```Hotfix branches```  是用于对生产环境进行补丁工作的分支。这也是唯一一种从公共发布分支创建的分支类型。并且为了尽快发布，针对这个补丁的功能开发、缺陷修复、发布准备不再细分分支，而是统一在该 ```Hotfix branches``` 中进行。但是依旧要通过 ```pull request``` 的方式合并进公共分支。特别要注意的是，hotfix 过程中会进行发布，需要更新代码的版本号。
 
-1.  从公共发布分支中签出特定版本的代码（比如是针对1.4.1版本的hotfix）：
+1. 从公共发布分支中签出特定版本的代码（比如是针对1.4.1版本的hotfix）：
 
-    ```bash
+    ``` bash
         git checkout -b hotfix/GitDemo/GDM-issue-010-version-1.4.1 <project name>@<version>
     ```
 
-2.  完成 hotfix 的开发工作；
+1. 完成 hotfix 的开发工作；
 
-3.  使用 [```git tag```][19] 为代码库更新版本；
-    ```bash
+1. 使用 [```git tag```][19] 为代码库更新版本；
+    ``` bash
         git tag -a <project name>@<new version>-hotfix
-        git push origin <project name>@<new version>-hotfix hotfix/GitDemo/GDM-issue-010-version-1.4.1  
+        git push origin <project name>@<new version>-hotfix hotfix/GitDemo/GDM-issue-010-version-1.4.1
     ```
 
-4.  将分支推送到编译服务器上的 git 仓库，尝试编译并且打出版本包；
+1. 将分支推送到编译服务器上的 git 仓库，尝试编译并且打出版本包；
 
-5.  如果版本号能够成功使用，则创建 ```pull request``` 并且完成评审工作；
+1. 如果版本号能够成功使用，则创建 ```pull request``` 并且完成评审工作；
 
-6. 合并分支，并且将合并后的分支推送到中央代码库。
+1. 合并分支，并且将合并后的分支推送到中央代码库。
 
-    ```bash
+    ``` bash
         git checkout GitDemo-Release
         git pull origin GitDemo-Release
         git merge hotfix/GitDemo/GDM-issue-010-version-1.4.1
@@ -456,15 +454,15 @@ Git 的工作流的核心理念是所有的功能开发(feature)、缺陷修补(
         git merge hotfix/GitDemo/GDM-issue-010-version-1.4.1
         git push origin GitDemo
     ```
-    
-##More resources
+
+## More resources
 
 - [Git overview article][20]
 - [Git tutorials][21]
 - [Git branch][7]
 - [Git pull request][16]
 - [Bitbucket pull request documentation][18]
- 
+
 <!-- Anchors -->
 [Initialize and set up a project]: #initialize-and-set-up-a-project
 [Set up a new repository]: #set-up-a-new-repository

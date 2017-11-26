@@ -1,6 +1,6 @@
-#Conventions and style
+# Conventions and style
 
-##Conventions
+## Conventions
 
 - 文档中的代码如非特别说明，均使用C#编写。
 
@@ -10,7 +10,7 @@
 
 - 统一使用 “避免” 或者 "Don't" 表示要求避免使用做法。
 
-##Style
+## Style
 
 - 语言保持简洁。不要使用委婉的语气。不要过多解释原因。
 
@@ -22,7 +22,7 @@
 
 - 技术名称、框架名称、开发平台等通用专有名词使用官方的全称英文单词。不要使用翻译的中文单词，也不要使用缩略语。英文单词前后保留一个空格。
 
-##More resources
+## More resources
 
 - [Overview article](./../README.md)
 - [Index of the contribution guidelines](./contribution-guidelines-index.md)

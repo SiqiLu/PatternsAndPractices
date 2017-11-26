@@ -1,14 +1,14 @@
-#Overview of git articles
+# Overview of git articles
 
 Git 系列文章主要涵盖三部分内容。
 
 1. 推荐使用的 Git workflow 及对此工作流的详细描述；
 
-2. Git 的常用命令、基本使用方法和常用配置；
+1. Git 的常用命令、基本使用方法和常用配置；
 
-3. Git 的工具、相关文档和书籍。
+1. Git 的工具、相关文档和书籍。
 
-##General
+## General
 
 - 推荐使用的 Git 工作流 [Git workflow](./git-workflow.md)
 
@@ -16,7 +16,7 @@ Git 系列文章主要涵盖三部分内容。
 
 - 不要使用的 Git 功能 [Don't do in Git](./git-do-not-do.md)
 
-##Git commands
+## Git commands
 
 - [Git init](./git-command-git-init.md)
 
@@ -52,13 +52,13 @@ Git 系列文章主要涵盖三部分内容。
 
 - [Git merge](./git-command-git-merge.md)
 
-##Git files
+## Git files
 
 - [gitignore](./git-file-gitignore.md)
 
 - [README.md](./git-file-readme.md)
 
-##Git undo or rewriting history
+## Git undo or rewriting history
 
 - 撤销 Git 中的操作 [Undo anything in Git](./git-undo-anything.md)
 
@@ -72,7 +72,7 @@ Git 系列文章主要涵盖三部分内容。
 
 - [Git clean](./git-command-git-clean.md)
 
-##Git tools
+## Git tools
 
 - [官方 Git](https://git-scm.com/downloads)
 
@@ -82,7 +82,7 @@ Git 系列文章主要涵盖三部分内容。
 
 - [GUI工具 - SourceTree](https://www.sourcetreeapp.com/)
 
-##Git documentation and books
+## Git documentation and books
 
 - [Git 官方文档](https://git-scm.com/doc)
 

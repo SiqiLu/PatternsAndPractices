@@ -1,5 +1,6 @@
-#Contribution guidelines index
-##General
+# Contribution guidelines index
+
+## General
 
 - [Conventions and style](./conventions-and-style.md)
 
@@ -9,8 +10,7 @@
 
 - [How to undo almost anything with Git (GitHub blog)](https://github.com/blog/2019-how-to-undo-almost-anything-with-git)
 
-
-##Authoring articles: markdown
+## Authoring articles: markdown
 
 - [Markdown basics](https://help.github.com/articles/getting-started-with-writing-and-formatting-on-github/)
 
@@ -23,4 +23,3 @@
 - [Create tables in markdown](./create-tables-markdown.md)
 
 - [Markdown template for new articles](../markdown-templates/markdown-template-for-new-articles.md)
-

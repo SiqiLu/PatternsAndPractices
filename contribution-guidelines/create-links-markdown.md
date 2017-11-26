@@ -80,7 +80,7 @@
 
 不要使用短链或者其他形式的跳转链接。
 
-##More resources
+## More resources
 
 - [Overview article](./../README.md)
 - [Index of the contribution guidelines](./contribution-guidelines-index.md)

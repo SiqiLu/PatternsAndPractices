@@ -1,4 +1,4 @@
-#Create tables in markdown
+# Create tables in markdown
 
 在 markdown 文件中使用表格。
 
@@ -17,17 +17,18 @@
 ![Markdown 中使用 TABLE 标签][2]
 
 有关更多的在markdown中使用表格的信息，请参考：
-- [Markdown tables generator][1] 
-- [GitHub wiki: Markdown-Cheatsheet#wiki-tables][2]
 
-##More resources
+- [Markdown tables generator][Markdown tables generator]
+- [GitHub wiki: Markdown-Cheatsheet#wiki-tables][GitHub wiki: Markdown-Cheatsheet#wiki-tables]
+
+## More resources
 
 - [Overview article](./../README.md)
 - [Index of the contribution guidelines](./contribution-guidelines-index.md)
 
 <!-- Links -->
-[1]: http://www.tablesgenerator.com/markdown_tables
-[2]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#wiki-tables
+[Markdown tables generator]: http://www.tablesgenerator.com/markdown_tables
+[GitHub wiki: Markdown-Cheatsheet#wiki-tables]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#wiki-tables
 
 <!-- Images -->
 [1]: ./media/create-tables-markdown/table-markdown.png

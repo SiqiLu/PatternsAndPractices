@@ -15,12 +15,12 @@
 还可以使用引用形式的链接，比如：我经常使用 [Google] [gog] ，使用次数远超过使用 [Yahoo] [yah] 或者 [MSN] [msn] 的次数。
 
 > **Note:**
-
+>
 > 提示内容。使用 markdown 的 quoting text 语法将文档中的提示内容以缩进的区域块展示。并且使用加粗的字体表示此区域块的类型。
 
 <!-- 连续的 quoting text 区域之间必需使用注释才能隔开-->
 > **Warning:**
-
+>
 > 提示内容。使用 markdown 的 quoting text 语法将文档中的提示内容以缩进的区域块展示。并且使用加粗的字体表示此区域块的类型。
 
 ## Heading 2 (H2)
@@ -42,12 +42,12 @@
             Contract.EndContractBlock();
 
             return Array.BinarySearch<T>(_items, index, count, item, comparer);
-        }  
+        }
     ```
 
-2. 第二项；
+1. 第二项；
 
-3. 第三项。
+1. 第三项。
 
 也可以使用无序列表。
 
@@ -59,17 +59,15 @@
 
 - 统一使用 “避免” 或者 "Don't" 表示要求避免使用做法。
 
-##More resources 
+## More resources
 
 文档的最后可以把相关联的文档和参考的文档的链接以无序列表的形式列在底部的 More resources 区域。在这个区域中的链接中间不要保留空行。
 
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
 <!-- Links -->
-[gog]: http://google.com/        
-[yah]: http://search.yahoo.com/  
-[msn]: http://search.msn.com/   
+[gog]: http://google.com/
+[yah]: http://search.yahoo.com/
+[msn]: http://search.msn.com/
 
 <!-- Images -->
 [1]: ./media/markdown-template-for-new-articles/copytemplate.png
-
- 
