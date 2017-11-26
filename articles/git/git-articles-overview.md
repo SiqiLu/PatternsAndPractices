@@ -10,11 +10,11 @@ Git 系列文章主要涵盖三部分内容。
 
 ## General
 
-- 推荐使用的 Git 工作流 [Git workflow](./git-workflow.md)
+- [Git workflow](./git-workflow.md)
 
-- 撤销 Git 中的操作 [Undo anything in Git](./git-undo-anything.md)
+- [Undo anything in Git](./git-undo-anything.md)
 
-- 不要使用的 Git 功能 [Don't do in Git](./git-do-not-do.md)
+- [Don't do in Git](./git-do-not-do.md)
 
 ## Git commands
 
@@ -60,7 +60,7 @@ Git 系列文章主要涵盖三部分内容。
 
 ## Git undo or rewriting history
 
-- 撤销 Git 中的操作 [Undo anything in Git](./git-undo-anything.md)
+- [Undo anything in Git](./git-undo-anything.md)
 
 - [Git commit --amend](./git-commit-amend.md)
 
